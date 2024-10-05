@@ -1,7 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Form Redirect to Custom HTML Page">
     <title>Redirect to HTML Page</title>
+    <style>
+        /* Base Styles */
+        body, html {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #e0e0e0; /* Light gray background */
+        }
+
+        /* Container Styles */
+        .container {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 40px 30px;
+            max-width: 400px;
+            width: 100%;
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.02); /* Slightly enlarge on hover */
+        }
+
+        /* Header Styles */
+        h2 {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #333; /* Darker text color */
+            font-weight: 600;
+        }
+
+        /* Input Styles */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555; /* Medium gray */
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 8px;
+            font-size: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: border 0.3s, box-shadow 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: #388e3c; /* Dark green color for focus */
+            box-shadow: 0 0 5px rgba(56, 142, 60, 0.4);
+            outline: none;
+        }
+
+        /* Button Styles */
+        button {
+            width: 100%;
+            background-color: #388e3c; /* Dark green color */
+            color: #ffffff;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        button:hover {
+            background-color: #33691e; /* Darker shade of green on hover */
+            box-shadow: 0 4px 12px rgba(56, 142, 60, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+
+            input[type="text"], input[type="password"], button {
+                font-size: 14px;
+            }
+
+            button {
+                padding: 12px;
+            }
+        }
+    </style>
     <script>
         function redirectToPage() {
             // Mengambil nilai dari input "Unique Code" dan "Password"
@@ -17,13 +114,15 @@
     </script>
 </head>
 <body>
-    <h2>Redirect Form</h2>
-    <form onsubmit="redirectToPage(); return false;">
-        <label for="uniqueCode">Unique Code:</label>
-        <input type="text" id="uniqueCode" name="uniqueCode" required><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <h2>Redirect Form</h2>
+        <form onsubmit="redirectToPage(); return false;">
+            <label for="uniqueCode">Unique Code:</label>
+            <input type="text" id="uniqueCode" name="uniqueCode" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
